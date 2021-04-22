@@ -1,0 +1,39 @@
+.Post{
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 840px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    font-size: 100%;
+    font-family: inherit;
+    border: 0;
+    padding: 0;
+    background-color: white;
+    cursor: pointer;
+}
+input:focus, button:focus{
+    outline: none;
+}
+
+@media only screen and (max-width: 880px){
+    .Post{
+        margin-left: 7px;
+        margin-right: 7px;
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 622.5px) {
+    .Post{
+        border: none;
+        background-color: rgba(var(--b3f,250,250,250),1);
+    }
+}

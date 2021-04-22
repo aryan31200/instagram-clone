@@ -1,0 +1,19 @@
+.Post-engagement {
+    display: flex;
+    margin: 10px 16px 0 16px;
+}
+.Post-comments, .Post-sharing {
+    margin-left: 12px;
+}
+.font-icons{
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.nums-of-like{
+    margin-left: 16px;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif;
+}

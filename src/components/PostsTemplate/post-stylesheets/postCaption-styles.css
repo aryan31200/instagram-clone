@@ -1,0 +1,14 @@
+.Post-caption {
+    padding: 5px 16px 10px 16px;
+}
+.Post-caption a:hover{
+    text-decoration: underline;
+}
+.Post-caption strong {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif;
+}
+.Post-caption span {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif;
+}

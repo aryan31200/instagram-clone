@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import userData from "./userData";
+import PostCard from "./components/PostsTemplate/PostCard";
+import Navbar from "./components/NavbarTemplate/Navbar";
+import { db } from "./firebase";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+
+    return(
+        <div>
+            <Navbar />
+            {userData.map((props) => {
+                return(
+                    <PostCard
+                        key={props.id}
+                        profileImg={props.profileImg}
+                        profileName={props.profileName}
+                        postImg={props.postImg}
+                        caption={props.caption}
+                        likes={props.likes}
+                    />
+                );
+            })}
+        </div>
+    );
 }
 
 export default App;

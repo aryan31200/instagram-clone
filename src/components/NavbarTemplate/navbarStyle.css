@@ -1,0 +1,89 @@
+/*------Navbar-------*/
+.outer-div{
+    display: block;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    width: 100%;
+    line-height: 53px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    margin-bottom: 30px;
+}
+.navbar{
+    max-width: 880px;
+    margin:0 auto;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 20px;
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+}
+.item-left{
+    display: block;
+    justify-content: flex-start;
+}
+.item-center{
+    justify-content: center;
+}
+input[type=text]{
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding: 7px;
+    width:200px;
+    height:12px;
+    margin: 0;
+    background-color: rgba(var(--b3f,250,250,250),1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,Arial, sans-serif;
+}
+.item-right{
+    justify-content: flex-end;
+    display: inline-flex;
+}
+.logo{
+    vertical-align: -18px;
+    height:35px;
+    width:auto;
+}
+.right-icons{
+    font-size: x-large;
+    color: black;
+    margin-left: 14px; 
+
+}
+
+.right-svg-icons{
+    vertical-align: text-bottom;
+}
+.pfp{
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 50%;
+    vertical-align: text-bottom;
+}
+
+/*----Placeholder editing----*/
+::-webkit-input-placeholder {
+    text-align: center;
+    font-weight: lighter;
+ }
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+    font-weight: lighter;
+ }
+ :-ms-input-placeholder {  
+    text-align: center; 
+    font-weight: lighter;
+ }
+
+ @media only screen and (max-width: 622.5px) {
+    .outer-div{
+        margin-bottom: 5px;
+    }
+}
