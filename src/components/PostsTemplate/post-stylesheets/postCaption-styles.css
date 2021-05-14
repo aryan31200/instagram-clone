@@ -1,7 +1,8 @@
 .Post-caption {
-    padding: 5px 16px 10px 16px;
+    padding: 16px 16px 0 16px;
+    font-size:14px;
 }
-.Post-caption a:hover{
+.Post-caption button:hover{
     text-decoration: underline;
 }
 .Post-caption strong {

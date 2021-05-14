@@ -4,9 +4,9 @@ import "./post-stylesheets/postCaption-styles.css";
 function PostCaption(props){
     return(
         <div className="Post-caption">
-            <a href="#profile">
-                <strong>{props.profileName}</strong>
-            </a>
+            <button>
+                <span style={{fontWeight:600}}>{props.profileName}</span>
+            </button>
             <span> {props.caption}</span>
         </div>
     )

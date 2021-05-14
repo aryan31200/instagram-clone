@@ -1,19 +1,27 @@
 import firebase from "firebase";
+import "firebase/firestore";
+import "firebase/auth";
+import configs from "./configs";
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyD88NZ_sBWq225NWzkyKwDcGVnOSj76Fa4",
-    authDomain: "react-instagram-clone-c385c.firebaseapp.com",
-    databaseURL: "https://react-instagram-clone-c385c-default-rtdb.firebaseio.com",
-    projectId: "react-instagram-clone-c385c",
-    storageBucket: "react-instagram-clone-c385c.appspot.com",
-    messagingSenderId: "587589930168",
-    appId: "1:587589930168:web:36ac1fb3bf4e3972b6f84d",
-    measurementId: "G-SPC72RV5QW"
+  apiKey: configs.apiKey,
+  authDomain: configs.authDomain,
+  databaseURL:configs.databaseURL,
+  projectId:configs.projectId,
+  storageBucket: configs.storageBucket,
+  messagingSenderId: configs.messagingSenderId,
+  appId: configs.appId,
+  measurementId: configs.measurementId,
 });
 
-const db=firebaseApp.firestore();
-const auth=firebase.auth();
-const storage=firebase.storage();
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const storage = firebase.storage();
 
-export {db,auth,storage};
+export { db, auth, storage };
+
+const provider=new firebase.auth.GoogleAuthProvider();
+
+provider.setCustomParameters({prompt:'select_account'});
+export const signInWithGoogle=()=>auth.signInWithPopup(provider);
 

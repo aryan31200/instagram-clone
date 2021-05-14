@@ -1,0 +1,94 @@
+
+.modal {
+  direction: ltr;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.modal-content {
+  width: 485px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  z-index: 2;
+}
+
+.modal-header{
+  padding: 0;
+  line-height: 45px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.header-span{
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-weight: 600;
+  margin: auto 20px;
+}
+.close-button{
+  float: right;
+  margin: 15px 15px;
+}
+
+.ImageUpload {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+input[type="text"].caption_input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 10px 0 5px 0;
+}
+
+.ImageUpload__progress {
+  width: 100%;
+  margin: 2px auto 2px auto;
+}
+
+.custom_upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 7px auto;
+  margin: 5px auto 5px auto;
+  cursor: pointer;
+  line-height: initial;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.upload_button {
+  height: 35px;
+  width: 50%;
+  margin: 5px auto 5px auto;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  vertical-align: middle;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+.upload_button[disabled]:hover{
+  background-color: white;
+}
+.upload_button:hover{
+  background-color: #f6f6f6;
+}
+.upload_button:active{
+  background-color: lightgray;
+}

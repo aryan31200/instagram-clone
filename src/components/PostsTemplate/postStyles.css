@@ -1,39 +1,111 @@
-.Post{
-    border-radius: 3px;
-    border: 1px solid #e6e6e6;
-    background-color: #fff;
-    margin-bottom: 20px;
+.Post {
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.post-comments {
+  padding: 0 16px 16px 16px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.single-comment {
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.post-commentsBox-div{
+  border-top: 1px solid #e6e6e6;;
+}
+
+.post-input {
+  padding-left: 16px;
+  padding-bottom: 6px;
+  width: 80%;
+  border: 0;
+  height: 40px;
+  margin: 0;
+}
+
+.post-button {
+  float: right;
+  padding-top: 10px;
+  margin-right: 16px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.credits_span {
+  text-align: center;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 0 0 15px 0;
+}
+
+.post-input::-webkit-input-placeholder {
+  color: #cdcdcd;
+}
+.post-input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #cdcdcd;
+}
+.post-input:-ms-input-placeholder {
+  color: #cdcdcd;
+}
+
+@media only screen and (max-width: 880px) {
+  .Post {
     margin-left: auto;
     margin-right: auto;
-    max-width: 840px;
+    margin-bottom: 20px;
+  }
 }
-a{
-    text-decoration: none;
-    color: black;
-}
-
-button{
-    font-size: 100%;
-    font-family: inherit;
-    border: 0;
-    padding: 0;
-    background-color: white;
-    cursor: pointer;
-}
-input:focus, button:focus{
-    outline: none;
-}
-
-@media only screen and (max-width: 880px){
-    .Post{
-        margin-left: 7px;
-        margin-right: 7px;
-        margin-bottom: 20px;
-    }
+@media only screen and (max-width: 725px) {
+  .Post {
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 20px;
+  }
 }
 @media only screen and (max-width: 622.5px) {
-    .Post{
-        border: none;
-        background-color: rgba(var(--b3f,250,250,250),1);
-    }
+  .Post {
+    border: none;
+    background-color: rgba(var(--b3f, 250, 250, 250), 1);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 594px;
+  }
+  .post-input {
+    height: 25px;
+    background-color: rgba(var(--b3f, 250, 250, 250), 1);
+  }
+  .post-button {
+    padding-top: 3px;
+    background-color: rgba(var(--b3f, 250, 250, 250), 1);
+  }
 }

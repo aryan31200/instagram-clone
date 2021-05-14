@@ -1,33 +1,55 @@
 .Post-user {
-    display: flex;
-    padding: 16px;
-    align-items: center;
+  display: flex;
+  padding: 16px;
+  align-items: center;
 }
+
 .Post-user-avatar {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
+
 .Post-user-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
+
+/* .dropdown-content {
+  top: 10;
+  position: absolute;
+  margin: 30px auto;
+  line-height: 20px;
+  z-index: 1;
+  width: 180px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+} */
+
 .Post-user-nickname {
-    margin-left: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-        Arial, sans-serif;
-    font-weight: bold;
+  margin-left: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
 }
-.Post-user-nickname:hover{
-    text-decoration: underline;
+
+.Post-user-nickname:hover {
+  text-decoration: underline;
 }
-.Post-menu-option {
-    margin-right: 0;
-    margin-left: auto;
+
+/* .Post-menu-option {
+  margin-right: 0;
+  margin-left: auto;
 }
-.font-icons{
-    font-size: x-large;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
+.font-icons {
+  font-size: x-large;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+} */
