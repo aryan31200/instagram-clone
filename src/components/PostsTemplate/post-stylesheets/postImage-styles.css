@@ -1,7 +1,8 @@
 .Post-image-bg {
-  background-color: #efefef;
+  background-color: var(--img-border-color);
 }
 .Post-image img {
   display: block;
   width: 100%;
+  border-top: 1px solid var(--img-border-color);
 }

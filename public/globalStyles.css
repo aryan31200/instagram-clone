@@ -1,5 +1,40 @@
 body{
   margin:0;
-  background-color: rgba(var(--b3f,250,250,250),1);
+  background-color: var(--background-color);
 }
 
+body[data-theme='light']{
+  --background-color:#fafafa;
+  --post-background:#ffffff;
+  --border-color:#e6e6e6;
+  --img-border-color:#efefef;
+  --font-color:#000;
+  --caption-font-color:#000;
+  --post-color-disabled:#b5e2fc;
+  --logger-buttons-hover:#f6f6f6;
+  --logger-buttons-active:lightgrey;
+  --disabled-button-theme:#7e7e7e;
+  --comment-box-color:#cdcdcd;
+  --upload-progress-bar: #fff;
+  --upload-progress-bar-border:#cccccc;
+}
+
+body[data-theme='dark']{
+  --background-color:#191919;
+  --post-background:#101010;
+  --border-color:#3b3b3b;
+  --img-border-color:#3b3b3b;
+  --font-color:#fff;
+  --caption-font-color:#e1e1e1;
+  --post-color-disabled:#1a3241;
+  --logger-buttons-hover:#050505;
+  --logger-buttons-active:#000;
+  --disabled-button-theme:#3b3b3b;
+  --comment-box-color:#6f6f6f;
+  --upload-progress-bar: #333333;
+  --upload-progress-bar-border: #3b3b3b;
+}
+
+.credits_span{
+  color:var(--font-color);
+}

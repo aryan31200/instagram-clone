@@ -5,7 +5,7 @@ function PostCaption(props){
     return(
         <div className="Post-caption">
             <button>
-                <span style={{fontWeight:600}}>{props.profileName}</span>
+                <span className="post-user-nickname">{props.profileName}</span>
             </button>
             <span> {props.caption}</span>
         </div>

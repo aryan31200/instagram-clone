@@ -15,16 +15,17 @@
 
 .modal-content {
   width: 485px;
-  background-color: white;
+  background-color: var(--post-background);
   border-radius: 3px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--border-color);
   z-index: 2;
+  color:var(--font-color);
 }
 
 .modal-header{
   padding: 0;
   line-height: 45px;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid var(--border-color);
 }
 .header-span{
   font-size: 16px;
@@ -46,18 +47,31 @@
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: white;
+  background-color: var(--post-background);
 }
 
 input[type="text"].caption_input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
   margin: 10px 0 5px 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 .ImageUpload__progress {
   width: 100%;
-  margin: 2px auto 2px auto;
+  margin: auto;
+  background-color: var(--upload-progress-bar);
+  border: 1px solid var(--upload-progress-bar-border);
+  border-radius: 3px;
+  padding: 0;
+}
+.ImageUpload__progress::-webkit-progress-bar{
+  background-color: var(--upload-progress-bar);
+}
+.ImageUpload__progress::-webkit-progress-value{
+  background-color: darkgreen;
 }
 
 .custom_upload {
@@ -76,19 +90,25 @@ input[type="text"].caption_input {
   height: 35px;
   width: 50%;
   margin: 5px auto 5px auto;
-  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border: 1px solid var(--border-color);
   vertical-align: middle;
+  color:var(--font-color);
   border-radius: 3px;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
 }
+
+.upload_button[disabled]{
+  color:var(--disabled-button-theme);
+}
+
 .upload_button[disabled]:hover{
-  background-color: white;
+  background-color: var(--post-background);
 }
 .upload_button:hover{
-  background-color: #f6f6f6;
+  background-color: var(--logger-buttons-hover);
 }
 .upload_button:active{
-  background-color: lightgray;
+  background-color:var(--logger-buttons-active);
 }

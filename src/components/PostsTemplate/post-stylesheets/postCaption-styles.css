@@ -1,15 +1,25 @@
 .Post-caption {
     padding: 16px 16px 0 16px;
     font-size:14px;
+    color:var(--caption-font-color);
 }
 .Post-caption button:hover{
     text-decoration: underline;
 }
-.Post-caption strong {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-        Arial, sans-serif;
+
+.post-user-nickname{
+    font-weight: 600;
+    color:var(--font-color);
 }
+
 .Post-caption span {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
         Arial, sans-serif;
+}
+
+
+@media only screen and (max-width: 622.5px) {
+    .post-user-nickname{
+        background-color:var(--background-color);
+    }
 }

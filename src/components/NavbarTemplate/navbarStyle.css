@@ -1,12 +1,12 @@
 /*------Navbar-------*/
 .outer-div {
   display: block;
-  border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
   line-height: 53px;
   position: sticky;
   top: 0;
-  background-color: white;
+  background-color: var(--post-background);
   margin-bottom: 30px;
 }
 .navbar {
@@ -33,13 +33,15 @@ a {
   width: 214px;
 }
 input[type="text"].search_bar {
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--border-color);
   border-radius: 3px;
   padding: 7px;
   width: 92.5%;
   height: 12px;
   margin: 0;
-  background-color: rgba(var(--b3f, 250, 250, 250), 1);
+  color:var(--font-color);
+  font-weight: lighter;
+  background-color: var(--background-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
 }
@@ -51,25 +53,26 @@ input[type="text"].search_bar {
 .logo {
   vertical-align: -18px;
   height: 35px;
-  width: auto;
+  width: 105px;
 }
 .right-buttons button.inlogger {
   direction: ltr;
   text-align: center;
   margin: auto;
   height: 35px;
-  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border: 1px solid var(--border-color);
   vertical-align: middle;
   border-radius: 3px;
+  color:var(--font-color);
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
 }
 button.inlogger:hover {
-  background-color: #f6f6f6;
+  background-color: var(--logger-buttons-hover);
 }
 button.inlogger:active {
-  background-color: lightgray;
+  background-color: var(--logger-buttons-active);
 }
 .login {
   margin: auto 5px auto 2px;
@@ -87,18 +90,18 @@ button.inlogger:active {
   margin: auto;
   height: 30px;
   width: 80%;
-  margin: auto;
-  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border: 1px solid var(--border-color);
   border-radius: 3px;
+  color:var(--font-color);
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
 }
 button.outlogger:hover {
-  background-color: #f6f6f6;
+  background-color: var(--logger-buttons-hover);
 }
 button.outlogger:active {
-  background-color: lightgray;
+  background-color: var(--logger-buttons-active);
 }
 .logout {
   margin: auto;
@@ -114,6 +117,7 @@ button.outlogger:active {
   border-radius: 50%;
   vertical-align: middle;
   margin-left: 20px;
+  border: 1px solid var(--img-border-color);
 }
 .dropdown-content {
   direction: ltr;
@@ -123,12 +127,18 @@ button.outlogger:active {
   z-index: 1;
   width: 180px;
   padding: 10px;
-  background-color: white;
-  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  background-color: var(--post-background);
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
   border-radius: 3px;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
+}
+
+.themeToggle{
+  float: right;
+  height: 16px;;
 }
 
 /*----Placeholder editing----*/

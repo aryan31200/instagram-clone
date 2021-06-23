@@ -106,8 +106,8 @@ function ImgUpload({onClose,show,username,profImg,mail}) {
                         enableScrolling();
                     }}>
                         <svg height="20" width="20">
-                            <line x1="5" y1="5" x2="15" y2="15" style={{stroke:"black",strokeWidth:3}} />
-                            <line x1="15" y1="5" x2="5" y2="15" style={{stroke:"black",strokeWidth:3}} />
+                            <line x1="5" y1="5" x2="15" y2="15" style={{stroke:"var(--caption-font-color)",strokeWidth:3}} />
+                            <line x1="15" y1="5" x2="5" y2="15" style={{stroke:"var(--caption-font-color)",strokeWidth:3}} />
                         </svg>
                     </button>
                 </div>

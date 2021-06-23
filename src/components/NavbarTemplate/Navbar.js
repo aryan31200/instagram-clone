@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { signInWithGoogle } from "../../firebase";
 import "./navbarStyle.css";
-import img from "./nav-logo.png";
+import lightmodeimg from "./nav-logo.png";
+import darkmodeimg from "./nav-dark-mode-logo.png";
 import googleLogo from "./transparent-gif.gif";
 import ImgUpload from "../ImageUpload/ImgUpload";
 
@@ -15,7 +16,7 @@ function Navbar(props) {
         <div className="menu">
           <div className="item item-left">
             <button>
-              <img className="logo" alt="Instagram-logo" src={img} />
+              <img className="logo" alt="Instagram-logo" src={props.modeTheme==="dark"?darkmodeimg:lightmodeimg} />
             </button>
           </div>
           <div className="item item-center">
@@ -43,7 +44,7 @@ function Navbar(props) {
                         cx="15"
                         cy="15"
                         r="14"
-                        stroke="black"
+                        stroke="var(--caption-font-color)"
                         strokeWidth="1.5"
                         fill="none"
                       />
@@ -52,14 +53,14 @@ function Navbar(props) {
                         y1="7"
                         x2="15"
                         y2="23"
-                        style={{ stroke: "black", strokeWidth: 1.5 }}
+                        style={{ stroke: "var(--caption-font-color)", strokeWidth: 1.5 }}
                       />
                       <line
                         x1="7"
                         y1="15"
                         x2="23"
                         y2="15"
-                        style={{ stroke: "black", strokeWidth: 1.5 }}
+                        style={{ stroke: "var(--caption-font-color)", strokeWidth: 1.5 }}
                       />
                     </svg>
                   </button>
@@ -79,8 +80,11 @@ function Navbar(props) {
                         {props.userAvailable.displayName
                           .replace(/ /g, "_")
                           .toLowerCase()}
-                      </span>{" "}
-                      <hr color="#dbdbdb" size="1" />
+                      </span>
+                      <p style={{fontWeight: 600,paddingBottom:"10px",borderBottom:"1px solid var(--border-color)"}}>Dark Mode
+                      <input className="themeToggle" type="checkbox" defaultChecked={props.modeTheme==="dark"?true:false} onChange={()=>props.modeChange()}/>
+                      </p>
+                      
                       <button className="outlogger" onClick={props.logout}>
                         <span className="logout">Logout</span>
                       </button>
