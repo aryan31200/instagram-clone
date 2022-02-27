@@ -17,6 +17,8 @@ body[data-theme='light']{
   --comment-box-color:#cdcdcd;
   --upload-progress-bar: #fff;
   --upload-progress-bar-border:#cccccc;
+  --theme-toggler: white;
+  --theme-toggler-shadow: lightgray;
 }
 
 body[data-theme='dark']{
@@ -33,6 +35,8 @@ body[data-theme='dark']{
   --comment-box-color:#6f6f6f;
   --upload-progress-bar: #333333;
   --upload-progress-bar-border: #3b3b3b;
+  --theme-toggler: #3b3b3b;
+  --theme-toggler-shadow: rgb(51, 51, 51);
 }
 
 .credits_span{

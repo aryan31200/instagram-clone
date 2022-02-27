@@ -120,11 +120,14 @@ button.outlogger:active {
   border: 1px solid var(--img-border-color);
 }
 .dropdown-content {
+  transform-origin: top right;
   direction: ltr;
   position: absolute;
+  animation: scaleUp 0.5s linear forwards;
   margin: 10px auto;
   line-height: 20px;
-  z-index: 1;
+  z-index: 0;
+  visibility: hidden;
   width: 180px;
   padding: 10px;
   background-color: var(--post-background);
@@ -136,11 +139,43 @@ button.outlogger:active {
     Arial, sans-serif;
 }
 
-.themeToggle{
+
+/*-----Dark mode Toggle------*/
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+.switch {
+  font-size: 15px; /* 1 */
+  width: 34px;
+  background: lightgray;
+  border: 1px solid var(--post-background);
+  border-radius: 20px;
   float: right;
-  height: 16px;;
+  height: 16px;
+  margin-top: 3px;
+}
+.switch div {
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  border: 1px solid var(--border-color);
+  background: var(--theme-toggler);
+  margin: -1px;
+  box-shadow: 0 0 0.4em var(--theme-toggler-shadow);
+  -webkit-transition: -webkit-transform 300ms;
+     -moz-transition: -moz-transform 300ms;
+          transition: transform 300ms;
+}
+.switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+     -moz-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
 }
 
+.dropdown-content.exit{
+  animation: scaleDown 0.5s linear forwards;
+}
 /*----Placeholder editing----*/
 .search_bar::-webkit-input-placeholder {
   text-align: center;
@@ -164,5 +199,31 @@ button.outlogger:active {
 @media only screen and (max-width: 622.5px) {
   .outer-div {
     margin-bottom: 5px;
+  }
+}
+
+
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+    visibility: hidden;
+  }
+  100% {
+
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+    transform: scale(0);
+    
   }
 }

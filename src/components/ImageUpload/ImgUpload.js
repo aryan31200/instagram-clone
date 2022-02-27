@@ -14,7 +14,7 @@ function ImgUpload({onClose,show,username,profImg,mail}) {
 
     const handleChange = (e) =>{
         var file=e.target.files[0];
-        //console.log(e.target.files[0]);
+        let flag=false;
         if(file){
             var ext=file.name.match(/\.([^.]+)$/)[1];
             switch(ext){
@@ -26,13 +26,26 @@ function ImgUpload({onClose,show,username,profImg,mail}) {
                 case 'BMP':
                 case 'png':
                 case 'PNG':
-                    setImage(file);
+                    flag=true;
                     break;
                 default:
                     alert("File type not supported \nOnly .jpg, .bmp, .png allowed");
                     file="";
+                    flag=false;
                     setImage(null);
             }  
+        }
+        if(flag){
+            var image=new Image();
+            image.onload=function(){
+                if(this.height/this.width >= 1.5 || this.width/this.height >=2.2){
+                    alert("Please crop the image and try again!!!");
+                    setImage(null);
+                }else{
+                    setImage(file);
+                }
+            }
+            image.src=URL.createObjectURL(file);
         }
     }
 
@@ -90,7 +103,7 @@ function ImgUpload({onClose,show,username,profImg,mail}) {
     }
     return (
         <div 
-            className="modal" 
+            className={`modal`}
             onClick={()=>{
                 onClose();
                 setImage(null);
@@ -112,6 +125,7 @@ function ImgUpload({onClose,show,username,profImg,mail}) {
                     </button>
                 </div>
                 <div className='ImageUpload'> 
+                    {image!=null && <img style={{margin:"10px 5px",border:"1px solid var(--border-color)",borderRadius:"3px"}} width="100%" src={URL.createObjectURL(image)} alt="Selected pic"/>}
                     <input type = "file" accept="image/bmp, image/png, image/jpeg" onChange = {handleChange} />
                     <input className="caption_input" type = "text" placeholder = "Enter a Caption" onChange={event => setCaption(event.target.value)} />
                     <progress className= 'ImageUpload__progress' value ={progress} max="100" />

@@ -6,7 +6,9 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+  transform: scale(1);
+  animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,18 +17,24 @@
 
 .modal-content {
   width: 485px;
+  transform: scale(0);
   background-color: var(--post-background);
-  border-radius: 3px;
   border: 1px solid var(--border-color);
+  animation: zoomIn 0.1s 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  border-radius: 3px;
   z-index: 2;
   color:var(--font-color);
 }
 
 .modal-header{
   padding: 0;
+  opacity: 0;
   line-height: 45px;
   border-bottom: 1px solid var(--border-color);
+  animation: modalContentFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  position: relative;
 }
+
 .header-span{
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -40,6 +48,9 @@
 }
 
 .ImageUpload {
+  opacity: 0;
+  animation: modalContentFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -111,4 +122,54 @@ input[type="text"].caption_input {
 }
 .upload_button:active{
   background-color:var(--logger-buttons-active);
+}
+
+
+/* -----Keyframes--------- */
+
+@keyframes fadeIn{
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes modalContentFadeIn {
+  0% {
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes sketchIn {
+  0% {
+    stroke-dashoffset: 778;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }

@@ -9,6 +9,8 @@ import ImgUpload from "../ImageUpload/ImgUpload";
 function Navbar(props) {
   const [show, setShow] = useState(false);
   const [open, setOpen] = useState(false);
+  const [close, setClose] = useState(true);
+  var newClass=close?"":"exit";
 
   return (
     <div className="outer-div">
@@ -31,7 +33,7 @@ function Navbar(props) {
                 </button>
               ) : (
                 <>
-                  <button onClick={() => setOpen(prev=>!prev)}>
+                  <button onClick={() => {setOpen(prev=>!prev); setClose(prev=>!prev); newClass=close?"":"exit"; console.log(open,close)}}>
                     <img
                       className="pfp"
                       alt=""
@@ -72,24 +74,26 @@ function Navbar(props) {
                     mail={props.userAvailable.email}
                   />
 
-                  {open && (
-                    <div style={open?{display:"block"}:{display:"none"}} className="dropdown-content">
-                      <span style={{ fontWeight: 600 }}>Signed in as:</span>
-                      <br />
-                      <span>
-                        {props.userAvailable.displayName
-                          .replace(/ /g, "_")
-                          .toLowerCase()}
-                      </span>
-                      <p style={{fontWeight: 600,paddingBottom:"10px",borderBottom:"1px solid var(--border-color)"}}>Dark Mode
+                  <div className={"dropdown-content "+ newClass}>
+                    <span style={{ fontWeight: 600 }}>Signed in as:</span>
+                    <br />
+                    <span>
+                      {props.userAvailable.displayName
+                        .replace(/ /g, "_")
+                        .toLowerCase()}
+                    </span>
+                    <p style={{fontWeight: 600,paddingBottom:"10px",borderBottom:"1px solid var(--border-color)"}}>Dark Mode
+                    <label className="switch">
                       <input className="themeToggle" type="checkbox" defaultChecked={props.modeTheme==="dark"?true:false} onChange={()=>props.modeChange()}/>
-                      </p>
-                      
-                      <button className="outlogger" onClick={props.logout}>
-                        <span className="logout">Logout</span>
-                      </button>
-                    </div>
-                  )}
+                      <div></div>
+                    </label>
+                    </p>
+                    
+                    <button className="outlogger" onClick={props.logout}>
+                      <span className="logout">Logout</span>
+                    </button>
+                  </div>
+                  
                 </>
               )}
             </div>

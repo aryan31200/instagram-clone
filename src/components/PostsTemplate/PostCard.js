@@ -65,7 +65,7 @@ function PostCard(data) {
         ))}
       </div>
 
-      {data.user && (
+      {localStorage.getItem('isLogged') && (
         <div className="post-commentsBox-div">
         <form className="post-commentsBox">
           <input

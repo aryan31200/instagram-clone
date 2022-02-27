@@ -2,15 +2,34 @@ import React, { useEffect, useState } from "react";
 import PostCard from "./components/PostsTemplate/PostCard";
 import Navbar from "./components/NavbarTemplate/Navbar";
 import { auth, db } from "./firebase";
+import "dotenv/config";
+
+console.log(process.env);
 
 function App() {
   const [postData, setpostData] = useState([]);
   const [user,setUser] = useState(null);
   const [theme,setTheme]=useState(()=>{
     const val=localStorage.getItem('mode');
-    return val ? val:'light';
+    if(val){
+      return val;
+    }else{
+      const darkThemeCheck=window.matchMedia("(prefers-color-scheme:dark)");
+      console.log(darkThemeCheck);
+      if(darkThemeCheck.matches){
+        return 'dark';
+      }else{
+        return 'light';
+      }
+    }
   });
 
+  useEffect(()=>{
+    document.addEventListener('contextmenu',(e)=>{
+      e.preventDefault();
+    })
+  },[]);
+  
   useEffect(()=>{
     localStorage.setItem('mode',theme);
     document.body.dataset.theme=theme;
@@ -19,9 +38,10 @@ function App() {
   useEffect(()=>{
     const unsubscribe=auth.onAuthStateChanged((authUser)=>{
       if(authUser){
-        console.log(authUser);
+        localStorage.setItem('isLogged',true);
         setUser(authUser);
       }else{
+        localStorage.removeItem('isLogged');
         setUser(null);
       }
     })
